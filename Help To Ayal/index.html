@@ -1,0 +1,42 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ayal</title>
+        <link rel= "stylesheet " href="style.css">
+    </head>
+  <body>
+      
+    <header>
+      <button onclick="showTime()" id="time">Time</button>
+      <button onclick="showDate()" id="date">Date</button>
+      <button onclick="showDateAndTime()" id="dateandtime">Date &amp; Time</button>
+    </header>
+
+    <footer>
+        Ayal
+    </footer>
+  
+    <p style="color:black;" id="item-0"></p>
+  
+    <script>
+    function showTime() {
+      document.getElementById("dateandtime").style.backgroundColor ="lightgray";
+      document.getElementById("date").style.backgroundColor = "lightgray";
+      document.getElementById("time").style.backgroundColor = "red";
+      document.getElementById("item-0").innerText = new Date().toLocaleTimeString();; 
+    }
+    function showDate() {
+      document.getElementById("time").style.backgroundColor = "lightgray";
+      document.getElementById("dateandtime").style.backgroundColor ="lightgray";
+      document.getElementById("date").style.backgroundColor = "red";
+      document.getElementById("item-0").innerText = new Date().toLocaleDateString();
+    }
+    function showDateAndTime() {
+        showTime();
+        showDate();
+    }
+    </script>
+</body>
+</html>

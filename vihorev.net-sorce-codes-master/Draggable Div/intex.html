@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draggable Div Element | Vihorev </title>
+    <link rel= "stylesheet" href="style.css">
+    <!--Linking BoxIcon for Icon -->
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel= 'stylesheet' >
+</head>
+
+<body>
+    <div class="warpper">
+        <header>Draggable Div</header>
+        <div class="content">
+            <div class="icon"><i class="bx bx-move"></i></div>
+            <div class="title>">Insert your text here</div>
+            <p>This is a Draggable Div created to store a text block</p>
+        </div>
+    </div>
+
+    <script>
+    const warpper = document.querySelector(".warpper"),
+    header = warpper.querySelector("header");
+
+    function onDrag({movementX , movementY}){
+        let getStyle = window.getComputedStyle(warpper);
+        let left = parseInt(getStyle.left); //getting left value of warper and parsing string to integer or number
+        let top = parseInt(getStyle.top); //getting top value of warper and parsing string to integer or number
+        warpper.style.left = `${left + movementX}px`; //This funtion update the new X postion by increasing og the X
+        warpper.style.top = `${top + movementY}px`; //This funtion update the new Y postion by increasing og the Y
+        //console.log(e); //prints the mouse location while dragging into the console
+    }
+
+    header.addEventListener("mousedown",()=>{
+        header.classList.add("active");
+        header.addEventListener("mousemove", onDrag);
+    });
+    document.addEventListener("mouseup",()=>{
+        header.classList.add("active");
+        header.removeEventListener("mousemove", onDrag);
+    });
+    </script>
+
+</body>
+</html>

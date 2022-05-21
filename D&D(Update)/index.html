@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Styles.css" >
+    <link rel="stylesheet" href="/Menu%20Bar%20Function/Style.css" >
+    <!--Linking BoxIcon for Icon -->
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel= 'stylesheet' >
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel= 'stylesheet' >
+
+    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script src= "Script.js" defer></script>
+    <title>Drag And Drop Function</title>
+</head>
+
+<header>
+    <!-- sets the navagation bar -->
+    <nav>
+    
+        <div class="logo">
+          <h4>Vihorev</h4>
+        </div>
+        
+        <!-- displays my links -->
+        <ul class="vihorev-links">
+                <li>
+                    <a href="/Menu Bar Function/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="/D&D(Update)/index.html">Build My Page</a>
+                </li>
+                <li>
+                    <a href="#">Projects</a>
+                </li>
+                <li>
+                    <a href="/ContactForm/Form.html">Support</a>
+                </li>
+                <li>
+                    <a href="/login-form-v3/Login_v3/index.html">Log In</a>
+                </li>
+                <li>
+                    <a href="#">Register</a>
+                </li>
+            </ul>  
+
+        <!-- makes the contect responsive for the phone -->
+        <div class = "burger"> 
+            <div class = "line1"></div>
+            <div class = "line2"></div>
+            <div class = "line3"></div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <!--- This Sets the head text -->
+    <div class="headline">
+        <h4>Drag and Drop</h4>
+    </div>
+    <!--- This Function makes the list -->
+    
+    <!--- This Function makes the containers -->
+    <div class="container">
+        <p class="draggable" draggable= "true">Daniel</p>
+        <p class="draggable" draggable= "true">Vihorev</p>
+    </div>
+    <div class="container">
+        <p class="draggable" draggable= "true">Add New</p>
+        <p class="draggable" draggable= "true">Add New</p>
+    </div>
+    <!--- This Function sets the tool box -->
+    <div class="toolbox">
+        <table class = "list" border="1" >
+            <tr>
+                <td>
+                    <p class="draggable" draggable= "true">Image</p>
+                </td>
+                <td>
+                    <div class="warpper">
+                        <header>Text Box</header>
+                        <div class="content">
+                            <div class="icon"><i class="bx bx-move"></i></div>
+                            <div class="title>">Drag to Use Text</div>
+                            <input type="text"> <!--- This function activates the toolbox -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="draggable" draggable= "true">Form</p>
+                </td>
+                <td>
+                    <p class="draggable" draggable= "true">Video</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="draggable" draggable= "true">Headline</p>
+                </td>
+                <td>
+                    <p class="draggable" draggable= "true">Timer</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--This part activates the warper
+    <div class="warpper">
+        <header>Draggable Div</header>
+        <div class="content">
+            <div class="icon"><i class="bx bx-move"></i></div>
+            <div class="title>">Insert your text here</div>
+            <p>This is a Draggable Div created to store a text block</p>
+        </div>
+    </div>
+    -->
+
+    <!--This part runs the drag option of the warper-->
+    <script>
+    const warpper = document.querySelector(".warpper"),
+    header = warpper.querySelector("header");
+
+    function onDrag({movementX , movementY}){
+        let getStyle = window.getComputedStyle(warpper);
+        let left = parseInt(getStyle.left); //getting left value of warper and parsing string to integer or number
+        let top = parseInt(getStyle.top); //getting top value of warper and parsing string to integer or number
+        warpper.style.left = `${left + movementX}px`; //This funtion update the new X postion by increasing og the X
+        warpper.style.top = `${top + movementY}px`; //This funtion update the new Y postion by increasing og the Y
+        //console.log(e); //prints the mouse location while dragging into the console
+    }
+
+    header.addEventListener("mousedown",()=>{
+        header.classList.add("active");
+        header.addEventListener("mousemove", onDrag);
+    });
+    document.addEventListener("mouseup",()=>{
+        header.classList.add("active");
+        header.removeEventListener("mousemove", onDrag);
+    });
+    </script>
+
+    <!---
+    <div class="content">
+            <div class="draggable">A</div>
+            <div class="draggable">B</div>
+            <div class="draggable">C</div>
+        </div>
+    <script>
+        split(['.a','.b','.c'],{
+        gutterSize:20,
+        sizes: [25,25,50],
+        minSize:[300,300,300]
+        //directions:"vrtical"
+    });-->
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Tables </title>
+        <link rel="stylesheet" href="Tables%20Test/style.css">
+        <span style="font-family: sans-serif"></span>
+        <script>/*The funtion activates the OOP from the js file*/src="functions.js"</script>
+        <script src= "NodeServerTest/Index.js" type="text/javascript" ></script> 
+    </head>
+
+<body>
+
+  <script>
+    //Created new Vector - numBooks
+    var typeOfTables = ["Rank","Name","Points","Team"];
+    var tableOfRanks = ["1","2","3"];
+    var tableOfNames = ["Domenic","Sally","Nick"];
+    var tableOfPoints = ["88,110","72,400","52,300"];
+    var tableOfTeams = ["dcode","students","dcode"];
+
+    //var newTable = [var Rank, Var Name , Var Points , Var Team];
+    //const input = prompt("What's your name?");
+    //alert(`Your name is ${input}`);
+    //tableOfNames.push(input);
+    //document.getElementById("greeting").innerHTML = "25";
+    //.push("name");
+
+    //loops the 
+    for(var count = 0 ; count < 1; count++)
+    {
+      //tableOfNames = add("<th>"+Rank+"</th>")
+      console.log(tableOfNames[3]);
+    }
+
+    console.log("The Name that was added is ",tableOfNames.length,": ", tableOfNames[3]);
+
+     //let table = add.table 
+     {
+       //The function adds a table to the array/vector of tables  
+       //function addNewTable(tableposition);
+       //new table if button clicked == true;
+     } 
+     
+     
+      //The script activates the function 
+      //const btnAdd = document.querySelector(".btn-add");
+      //btnAdd.addEventListener("click", addNew);
+  </script>
+    
+  </body>
+
+    <h1>Dynamically Add & Remove Tables Rows</h1>
+    <form>
+      <div class="input-row" >
+        <label for="rank">Rank</label>
+        <input type="text" name="rank" id="rank" placeholder="Write Your Rank Here " />
+      </div>
+      <div class="input-row">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Write Your Name Here " />
+      </div>
+      <div class="input-row">
+        <label for="points">Points</label>
+        <input type="text" name="points" id="points" placeholder="Write Your Points Here " />
+       </div>
+      <div class="input-row">
+      <label for="team">Team</label>
+      <input type="text" name="team" id="team" placeholder="Write Your Team Here " />
+      </div>
+      <button class="btn-add">Submit</button>
+    </form>
+
+    
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Team</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="rank">0</td>
+          <td id="name">0</td>
+          <td id="points">0</td>
+          <td id="team">0</td>
+          <script>
+            //this.init = implementByTableId(0);
+            (function implementByTableId() {0})();
+          </script>
+        </tr>
+        <tr class="active-row">
+          <td>2</td>
+          <td>Sally</td>
+          <td>72,400</td>
+          <td>Students</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Nick</td>
+          <td>52,300</td>
+          <td>dcode</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      //The function adds the new row while button is clicked 
+      const formEl = document.querySelector('form');
+      const tbodyEl = document.querySelector('tbody');
+      const tableEl = document.querySelector('table');
+      function onAddClient(e){
+        e.preventDefault();
+        const rank = document.getElementById('rank').value;
+        const getfromdb = getUsernamesFromDB.call();
+        console.log("Ther data that retrived was "+getfromdb);
+        const name = getfromdb;//document.getElementById('name').value;
+        const points = document.getElementById('points').value;
+        const team = document.getElementById('team').value;
+        tbodyEl.innerHTML += `
+          <tr>
+            <td>${rank}</td>
+            <td>${name}</td>
+            <td>${points}</td>
+            <td>${team}</td>
+            <td><button class="deleteBtn">Delete</button></td>
+          </tr>
+        
+        `;
+        console.log('the user is added');
+      }
+
+      function onDeleteRow(e){
+        if(!e.target.classList.contains('deleteBtn')){
+          return;
+        }
+
+        const btn = e.target;
+        btn.closest('tr').remove();
+        console.log('clicked on the delete button');
+      }
+
+      formEl.addEventListener('submit', onAddClient);
+      tableEl.addEventListener('click', onDeleteRow );
+    </script>
+  </body>
+
+</html>

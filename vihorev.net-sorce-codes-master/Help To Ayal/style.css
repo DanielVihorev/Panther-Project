@@ -1,0 +1,46 @@
+body{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-rows:200px auto 100px;
+}
+  header,nav,aside,footer,main{
+    
+    border: 2px solid black;
+}
+header{
+    grid-column:1/span 12;
+}
+nav{
+    grid-column:1/span 2;
+    grid-row:2/span 1;
+}
+main{
+    grid-column:3/span 8;
+    grid-row:2/span 1;
+}
+aside{
+    grid-column:11/span 2;
+    grid-row:2/span 1;
+}
+footer{
+    grid-column:1/span 12;
+}
+header{
+    min-height:200px;
+}
+nav{
+    background-color:lightblue;
+    min-height:200px;
+}
+main{
+
+    min-height:300px;
+}
+aside{
+    background-color:green;
+    min-height:200px;
+}
+footer{
+  
+    min-height:100px;
+}

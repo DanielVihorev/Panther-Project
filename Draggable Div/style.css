@@ -1,0 +1,73 @@
+/* import google font - assistant */
+@import url('https://fonts.googleapis.com/css2?family=Assistant');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Assistant" , sans-serif;
+}
+
+body{
+    background: white;
+}
+
+/*this funtion activates the text warper*/
+.warpper{
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    background: white;
+    position: absolute;
+    border-radius: 10px;
+    transform: translate(-50%,-50%) scale(1.4); /*This Function moves it to the middle*/
+    border: 1px solid black;
+}
+
+/*this funtion styles the header of the warper*/
+.warpper header{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 500;
+    padding: 17px 30px;/*this is the sapce from the headr to the buttom text*/
+    border-bottom: 1px solid #C4333F;
+
+}
+
+.warpper header.active{
+    cursor: move;
+    user-select: none;
+}
+
+.warpper .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px 30px 40px;
+}
+
+.content .icon{
+    height: 95px;
+    width: 95px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 5px solid #C4333F;
+}
+
+.content .icon i{
+    color: #C4333F;
+    font-size: 60px;
+}
+
+.content .title{
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.content P{
+    font-size: 16px;
+    text-align: center;
+}

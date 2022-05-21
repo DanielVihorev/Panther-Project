@@ -1,0 +1,153 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Assistant' , sans-serif;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #ffffff ;
+    font-family: 'Assistant', sans-serif;
+}
+
+.logo{
+    /*left: 0px;*//* sets the logo to display on the top left */
+    color: #C4333F;
+    text-transform: uppercase; /* Sets the letter as uppercase = VIHOREV */
+    letter-spacing: 5px;
+    font-size: 48px;
+}
+
+/*sets the links in the way i want them */
+.vihorev-links{
+    display: flex;
+    background-color: #ffffff ;
+    justify-content: space-around;
+    width: 50%;
+}
+
+/* The function Removes The Dots from The links */
+.vihorev-links li{
+    list-style: none;
+}
+
+/*sets the font and color of the links */
+.vihorev-links a{
+    
+    color: #040707 ;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*the display of the burger function below*/
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+/*The Burger function to use it in the mobile*/
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #040707 ;
+    margin: 5px ;
+    transition: all 0.3s ease;
+}
+
+/*menu bar fixed because of the mobile resize*/
+
+@media screen and (max-width:1024px){
+    .vihorev-links{
+        width: 60%;
+    }
+}
+
+/*Screen option for the phone*/
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .vihorev-links
+    {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #C4333F ; /* The color of menu while the burger is clicked in a mobile */ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .vihorev-links li{
+        opacity: 100%;
+    }
+    
+    /*displays the burger function after mobile reconized by screen*/
+    .burger{
+        display: block;
+    }
+}
+
+
+
+.vihorev-active{
+    transform: translateX(0%);
+}
+
+@keyframes navlinksFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translatex(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(+45deg) translateX(-5px,-6px);
+}
+
+.rightsidebar{
+    background-color: yellow;
+    height: 400px ;
+    width: 100px ;
+    float: right;
+    border-radius: 20px;
+}
+
+.leftsidebar{
+    background-color: green;
+    height: 400px ;
+    width: 100px ;
+    border-radius: 20px;
+}
+
+.welcomemsg{
+    /* height: 50%; */
+    /* width: 50%; */
+    display: flex;
+    margin-left: 10rem;
+    padding: 5rem;
+    font-size: 5rem;
+    box-sizing: border-box;
+}

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant');
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Assistant' , sans-serif;
+
+}
+
+.btn{
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background: #C4333F;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+}
+
+.btn.click{
+    left: 265px;
+}
+
+.btn span{
+    color: white;
+    font-size: 28px;
+    line-height: 45px;
+}
+
+.btn.click span:before{
+    content: '\f00d';
+}
+
+.sidebar
+{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    background: #C4333F;
+    transition: left 0.4s ease;
+}
+
+.sidebar.show{
+    left: 0px;
+}
+
+.sidebar .text
+{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    background: #C4333F;
+    letter-spacing: 1px;
+}
+
+nav ul
+{
+    background: none;
+    height: 100%;
+    width: 100% ;
+    list-style: none;
+}
+
+/*Style of all the links that are not classed */
+nav ul li
+{
+    line-height: 60px;
+    border-bottom: 1px solid black;
+
+}
+
+/**/
+nav ul li:last-child{
+    border-bottom: 1px solid gray;
+
+}
+
+/*Style of a named class links */
+nav ul li a
+{
+    position: relative;
+    color: white;
+    text-decoration: none ;
+    font-size: 18px;
+    padding-left: 40px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+
+}
+
+/*Style of a named class links while hovered */
+nav ul li.active a{
+    color: black ;
+    background: #C4333F;
+    border-left-color: black;
+}
+/*The navs of the ul in the ul*/
+nav ul ul 
+{
+    position: static ;
+    display: none;
+}
+
+/*Function that displays the hidden Features links */
+nav ul .feat-show.show{
+    display: block;
+}
+
+/*Function that displays the hidden Services links */
+nav ul .serv-show.show1{
+    display: block;
+}
+
+
+/*Style of The nav links in the ul of the ul*/
+nav ul ul li
+{
+    line-height: 42px;
+    border-bottom: none ;
+}
+
+/*Style of The nav links in the ul of the ul of a class*/
+nav ul ul li a{
+    font-size: 14px;
+    color: white;
+    padding-left: 80px;
+}
+
+/*Style of a named class links while active */
+nav ul li.active ul li a{
+    color: black ;
+    background: #C4333F;
+    border-left-color: transparent;
+}
+
+/*Style of a named class links while hover */
+nav ul ul li a:hover{
+    color: black!important;
+    background: white!important;
+}
+
+/*Style of the span at a class */      
+nav ul li a span
+{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;
+}
+
+/*Style of the span at a class while hover*/ 
+nav ul li a span.rotate{
+    transform:  translateY(-50%) rotate(-180deg);
+}
