@@ -49,7 +49,7 @@ Step1. Create a Visual Studio 2008 windows form Application project
 Step2. Clear unnecessary parts in the project
 
 Step3: Add our project files you can get them from the gitlab website
-https://gitlab.com/radwan1230/karmiel-206-teamviewer/tree/master/
+(https://github.com/DanielVihorev/Panther-Project)
         
 Step4: change the log in server ip to the ip of the computer that is running the server
 
@@ -59,8 +59,15 @@ Step5: Build the project and run it
 /////////////////////////////////////////////////////////////////////////////
 References:
 
-#C# Tutorials
-http://www.tutorialspoint.com/csharp/
+#JS Tutorials
+https://nodejs.org/en/
 
+https://www.youtube.com/watch?v=W1Kttu53qTg&t=4606s
+
+https://www.typescriptlang.org/docs/handbook/jsx.html
+
+https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
+
+https://www.npmjs.com/
 
 /////////////////////////////////////////////////////////////////////////////
