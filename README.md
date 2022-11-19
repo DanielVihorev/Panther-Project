@@ -60,7 +60,7 @@ Step3: Add our project files you can get them from the github website
         
 Step4: change the log in server ip to the ip of the computer that is running the server
 
-Step5: Run it yourself or click Here : Panther.co.il
+Step5: Run it yourself or click Here : [Panther.co.il](http://panther.co.il/)
 
 
 /////////////////////////////////////////////////////////////////////////////
